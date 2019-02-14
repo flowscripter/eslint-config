@@ -1,0 +1,47 @@
+{
+    "name": "@flowscripter/eslint-config",
+    "version": "1.0.0",
+    "description": "Common ESLint config for all Flowscripter JavaScript projects.",
+    "main": "src/index.js",
+    "scripts": {
+        "lint": "./node_modules/.bin/eslint .",
+        "test": "./node_modules/.bin/jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/flowscripter/eslint-config"
+    },
+    "keywords": [
+        "eslint",
+        "eslintconfig",
+        "javascript"
+    ],
+    "contributors": [
+        {
+            "name": "Vectronic",
+            "email": "hello.vectronic@gmail.com",
+            "url": "https://vectronic.io"
+        }
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/flowscripter/eslint-config/issues"
+    },
+    "homepage": "https://github.com/flowscripter/eslint-config",
+    "devDependencies": {
+        "babel-eslint": "^10.0.1",
+        "eslint": "^5.3.0",
+        "eslint-plugin-import": "^2.16.0",
+        "eslint-plugin-jest": "^22.3.0",
+        "jest": "^24.1.0"
+    },
+    "peerDependencies": {
+        "babel-eslint": "^10.0.1",
+        "eslint": "^5.3.0",
+        "eslint-plugin-import": "^2.16.0",
+        "eslint-plugin-jest": "^22.3.0"
+    },
+    "dependencies": {
+        "eslint-config-airbnb-base": "^13.1.0"
+    }
+}
