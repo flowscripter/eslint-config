@@ -1,6 +1,13 @@
+dist: trusty
 language: node_js
 node_js:
     - '10'
     - '11'
+addons:
+    sonarcloud:
+        organization: 'flowscripter'
+        token:
+            secure: $SONAR_TOKEN
 script:
     - npm run test
+    - sonar-scanner
