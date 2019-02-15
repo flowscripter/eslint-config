@@ -1,7 +1,7 @@
 # eslint-config
 ![License](https://img.shields.io/github/license/flowscripter/eslint-config.svg)
 ![Dependencies](https://img.shields.io/david/flowscripter/eslint-config.svg)
-![Travis](https://img.shields.io/travis/flowscripter/eslint-config.svg)
+![Travis](https://api.travis-ci.com/flowscripter/eslint-config.svg)
 
 Common ESLint config for all Flowscripter JavaScript projects.
 
