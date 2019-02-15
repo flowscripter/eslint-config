@@ -10,6 +10,10 @@ addons:
         organization: 'flowscripter'
         token:
             secure: $SONAR_TOKEN
-script:
-    - npm run coverage
-    - sonar-scanner
+jobs:
+    include:
+        - stage: test
+          script: ./node_modules/.bin/jest --coverage
+        - script: ./node_modules/.bin/eslint -f json -o reports/eslint.json .
+        - stage: sonar
+          script: sonar-scanner
