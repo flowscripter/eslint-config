@@ -4,8 +4,8 @@
     "description": "Common ESLint config for all Flowscripter JavaScript projects.",
     "main": "src/index.js",
     "scripts": {
-        "lint": "./node_modules/.bin/eslint .",
-        "test": "./node_modules/.bin/jest"
+        "test": "./node_modules/.bin/jest",
+        "lint": "./node_modules/.bin/eslint ."
     },
     "repository": {
         "type": "git",

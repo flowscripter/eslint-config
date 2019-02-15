@@ -1,6 +1,19 @@
+dist: trusty
 language: node_js
 node_js:
-    - '10'
     - '11'
-script:
-    - npm run test
+branches:
+    only:
+        - master
+addons:
+    sonarcloud:
+        organization: 'flowscripter'
+        token:
+            secure: $SONAR_TOKEN
+jobs:
+    include:
+        - stage: test
+          script: ./node_modules/.bin/jest --coverage
+        - script: ./node_modules/.bin/eslint -f json -o reports/eslint.json .
+        - stage: sonar
+          script: sonar-scanner
