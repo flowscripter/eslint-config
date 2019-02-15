@@ -14,9 +14,6 @@ notifications:
     slack: hootworks:$SLACK_TOKEN
 jobs:
     include:
-        - stage: test
-          script: ./node_modules/.bin/jest
-        - stage: sonar
-          script: ./node_modules/.bin/jest --coverage
+        - script: ./node_modules/.bin/jest --coverage
         - script: ./node_modules/.bin/eslint -f json -o reports/eslint.json .
         - script: sonar-scanner
