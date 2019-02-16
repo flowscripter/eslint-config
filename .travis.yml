@@ -1,44 +1,34 @@
 language: node_js
-
 node_js: '11'
-
 branches:
   only:
-    - master
-
+  - master
 notifications:
   slack:
-    rooms:
-      - secure: jHCpLkDg5iqqyj5PfRhmaj6xN2wS2kxr097WmXDVNzqGKgRAL7iiqdiI75a2RX7yuKtwfJEEi3+3ET2QagRylmGsWu+tLI5g4+7S/1FaZb9KDdSq4Zl8LxDjKC/eYbwJyN6ppQWxOIly1JRXVvY30SJ/TWRrTBLY/BDyC1CmdKvILxJF1HgfLE3AaV/tovdL8+aLaE9zaTkTIlck11u2fiNae1qj6xM3Va7ktjg10mSv2DxoNPuB8GAKQaLWvg2hG/gRUJyYGbC77ery/sS5Q1ur+6zClqSgQF5PiKkzuMCbIilJgO7RSTVRM4lEFe4bdW9locX1kZHge1IxM21bhpDEj9oFYUfGHjtV4NAhD5gTiLMYHHGIyAbClO36QDuuA7zmb/CdUCFTicGFVCMZrfkMPc1dSViLQKPObs2au4EO8tAOcFqFE1Q8IZp7XsvFhN+K/MmD3WvYHNk+mVfQeeFiLV0hcNBZQxCIac6CrBEgL92l2fwS/F3cHuEIHpTNLgHfZBVgtzrMV1nWjfM2rcKB25zOCsmm60viVqcdHrlyyhugat0KH8l21QRPHrgaUttjLHL86z1QKNISk4aEvRZiOnC1n0NYschlttrh4Z7bwx4d1Lgyj+GYkklZkkhh7lCogxh63V620m8KjnasUlvt7l76MBXmeCe1YF/GnrI=
+    secure: htEU3VYK0wUjaUetVG28Wt722xTQUcPy7VQJ8eXA1Mg4TFfiNkkbTN3KD8B4+jnwalIxI24h/iRAb6OoQlS7Za5ZaCi5/+rbT2wbo5u/XxWukr55IvnZ8Bttb6rGUZUHsoK7EsaU4Jr5xWrd1Q9Hw/L3hp3hjBvT1bsNclq410hoVLrcieR7WL152wQTApOREioJYaEfCVEJYL3y+9Rupj5DPgoI8xiRbmaA3m4X02tuadHwZ0dk4zlllJ0sc0SokMObNBBj/s2Z+6m+sxzprhh4PK7ohon6QC0SgchJiBUR7h3B/5Zzg35RtzOAVq5AyFbMKEsh1hNdhebG8s/Fs7wNSmHSMem/v8ZFGinUfzBy1Wp3+EwNoP7incKhu7r3hqh/yuXxKu26sZYpHBKy6ovLyi6t09xUE2/jwXN/Yq3t+HntJaeV71QMcMqpBKpcTDQ02LEREYAZTBbrsIZ7P7HiYcDS3pVL08JQ0+Df+P3g8ysArHdbsShshGyNpLSZtHceBZj6zKMe8UWRaiBGciif+VpgQRPlRwx2Gw21lrDLYRwbl4uQqWWv0R3ygk3iMrJ9t/NjII1zWZ5KKj3jyd1okDENgsu2/V7PfcmSbYNSqMQJcAGUeoUdebtyXBr82Xw7KVhrfdGjoCFHG6IvbqRPgurqyjnIXo/jPHa44Gc=
     on_success: change
     on_failure: always
-
 stages:
-  - name: release
-    if: branch = master AND type != pull_request
-
+- name: release
+  if: branch = master AND type != pull_request
 jobs:
   include:
-    - stage: test
-      script: npm test
-      name: test
-    - script: npm run lint
-      name: lint
-
-    - stage: analysis
-      script: npx jest --coverage
-        && npx eslint -f json -o reports/eslint.json .
-        && npx gulp sonar
-      name: sonar
-      addons:
-        sonarcloud:
-          organization: flowscripter
-          token:
-            secure: $SONAR_TOKEN
-
-    - stage: release
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script:
-          - npx semantic-release
+  - stage: test
+    script: npm test
+    name: test
+  - script: npm run lint
+    name: lint
+  - stage: analysis
+    script: npx jest --coverage && npx eslint -f json -o reports/eslint.json . && npx gulp sonar
+    name: sonar
+    addons:
+      sonarcloud:
+        organization: flowscripter
+        token:
+          secure: "$SONAR_TOKEN"
+  - stage: release
+    deploy:
+      provider: script
+      skip_cleanup: true
+      script:
+      - npx semantic-release
