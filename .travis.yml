@@ -17,7 +17,7 @@ notifications:
 
 stages:
   - name: release
-    if: branch = master
+    if: branch = master AND type != pull_request
 
 jobs:
   include:
