@@ -30,6 +30,11 @@ jobs:
         && npx eslint -f json -o reports/eslint.json .
         && npx gulp sonar
       name: sonar
+      addons:
+        sonarcloud:
+          organization: flowscripter
+          token:
+            secure: $SONAR_TOKEN
 
     - stage: release
       deploy:
