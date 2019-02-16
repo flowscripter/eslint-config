@@ -8,12 +8,6 @@ branches:
   only:
     - master
 
-addons:
-  sonarcloud:
-    organization: flowscripter
-    token:
-      secure: K2Zcs7MfCqWZbq6BhcNze//EZWohVTt59Yfm8Rtws4Tlv+04LrZgcD2VHTpCoGmmunFi99o83+a9whQaX4Bp/ua3Lsf+akFSY5YqABhWFYxZZCaZEUbKfAwjL9mIVJDV4SzJyPcGZjfIK7bPfMO1+oMvXQL/jLFuNWQRZIAu2Mf9RcXwDmw3xkXokKbLSRbhWElPQ8UqjN0OZFRoW7EIf8ArseItNrs8ZTcXVHupwRZ53V6JElNCjEw5UKYbXE5HV7sMJS8e8BYEybHsRLQ4GA7LTF5vrGbw6emqqIEo6dZWfFGRDT9xsjeG3OvK4P3Xe/cSXoJbcJJiJZPKV/cD+KpnGc3LXxYT+ayPJKG1mLSh8+g0QnU6P2y59AEXe5dw0iAqqhcso2JO0KJ8IAOExd3yk+ul9eii25MgjMS0vigYRkkPpiV3iggwIXWwL00pqjrl44boIxsjbMPasfkh/4cq7a8Fs4+dGSmSj9QHya6c2WDEtxhlFDKWJp3V1eV4kegUpC8K2LcsoPW4wTSfyrnv4plRtRTOcbFGFb9rhEe0LKvY32JMprxv0gfBp39JPffvKJmWZf3rmzdkMqLQVgNq+Ja3sqW/R9kQxnGPkVw7BOdXDLid2VPxXW5txrunnrDh4srTUpNiz68rRzipjJ5q5SivhhTmrN7rVfn92HE=
-
 deploy:
   api_key:
     secure: mcZxmZtB8ry1c21FBJeep8kOt7LRjfUvjfNQnTaU92BV2MCZDGH32GODjbYpKLw/GXiv3MeEL5jDoAZMe/d5eOqaGSHYMTzDXEDurutjEwOn7wTJZWT9yh70WuZ9pA9x08WVk5vlnkHOv8Mo3b1PVrILpdM+SKf1qGLdW7epvJcSDK8QoRFvEzEzM0L8Ja/lAldGrB0VZDI5hGLVKCNmJMmkMCFgpSfS3vVCghLqy0Ly5lJtQfyScH+Yz0hlorhdHkD1ogXKG43NQuVdG/i0fD4zjT7tQC36sRbK/wr1VmgPVNqjIXZfs4dX4gDosTr0tbQVBzPhSsgcOyxG0PNhuv8PZ3hSpU2kwvBb6stGjqXQr7c0+5BhkmW1fWmJTmi3WOgg4Fz29lo+8oYjJj3lAsQSr/VHWYXqFxw8SRoL20QRHw96ici/KSYSRF38u6lRxXeZdE5ipoxBcTUsmkrUVtb+U4eoukxwRoUOwGruplnzRoQV6z/SGItblFlaVF/v3A8Ialvhfp5VjaYGjl8ghErmVYU/1+0Xi5DaPCX6uLYr0fLybxUjBmBiAGLvYGtUw9IovZooWWff5KRfvRfd3+OQOzB4ZuLiJV5dkBU4aqGZmMDvoNgYmBfywIN4VZwMRWo4lnF7hoNLoHvFCbp3/ox/IJkhDvwPt9jtQtXfi3c=
@@ -29,4 +23,13 @@ jobs:
       script: npm run test
     - script: npm run lint
     - stage: analyse
-      script: npm install sonar-scanner --no-save && npx jest --coverage && npx eslint -f json -o reports/eslint.json . && npx sonar-scanner
+      script: npm install sonar-scanner --no-save
+        && npx jest --coverage
+        && npx eslint -f json -o reports/eslint.json .
+        && npx sonar-scanner
+        -Dsonar.organization=flowscripter
+        -Dsonar.projectKey=flowscripter_eslint-config
+        -Dsonar.sources=src
+        -Dsonar.tests=test
+        -Dsonar.host.url=https://sonarcloud.io
+        -Dsonar.login=$SONAR_TOKEN
