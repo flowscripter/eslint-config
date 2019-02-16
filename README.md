@@ -9,8 +9,7 @@ Common ESLint config for all Flowscripter JavaScript projects.
 This extensible shared config is itself extended from
 [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)
 and
-[eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest)
-.
+[eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest).
 
 ## Usage
 
