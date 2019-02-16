@@ -19,21 +19,25 @@ jobs:
   include:
     - stage: test
       script: npm test
+      name: test
     - script: npm run lint
+      name: lint
     - stage: analysis
       script: npx jest --coverage
         && npx eslint -f json -o reports/eslint.json .
         && npx gulp sonar
+      name: sonar
       addons:
         sonarcloud:
           organization: flowscripter
           token:
             secure: $SONAR_TOKEN
     - stage: release
+      on:
+        branch: master
+      script: echo 'Releasing...'
       deploy:
         provider: script
         skip_cleanup: true
         script:
           - npx semantic-release
-        on:
-          branch: master
