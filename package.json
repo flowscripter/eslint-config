@@ -29,17 +29,17 @@
         "lint": "./node_modules/.bin/eslint ."
     },
     "devDependencies": {
-        "@commitlint/cli": "^7.5.2",
-        "@commitlint/config-conventional": "^7.5.0",
+        "@commitlint/cli": "7.5.2",
+        "@commitlint/config-conventional": "7.5.0",
         "babel-eslint": "10.0.1",
         "eslint": "5.14.0",
         "eslint-plugin-import": "2.16.0",
         "eslint-plugin-jest": "22.3.0",
-        "gulp": "^4.0.0",
-        "husky": "^1.3.1",
+        "gulp": "4.0.0",
+        "husky": "1.3.1",
         "jest": "24.1.0",
-        "semantic-release": "^15.13.3",
-        "sonarqube-scanner": "^2.2.0"
+        "semantic-release": "15.13.3",
+        "sonarqube-scanner": "2.2.0"
     },
     "peerDependencies": {
         "babel-eslint": "^10.0.1",
