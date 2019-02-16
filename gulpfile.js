@@ -5,7 +5,8 @@ function sonar(callback) {
         {
             options: {
                 'sonar.sources': 'src',
-                'sonar.tests': 'test'
+                'sonar.tests': 'test',
+                'sonar.projectKey': 'flowscripter_eslint-config'
             }
         },
         callback
