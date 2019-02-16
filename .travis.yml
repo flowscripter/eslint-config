@@ -15,6 +15,10 @@ notifications:
     on_success: change
     on_failure: always
 
+stages:
+  - name: release
+    if: branch = master
+
 jobs:
   include:
     - stage: test
@@ -22,6 +26,7 @@ jobs:
       name: test
     - script: npm run lint
       name: lint
+
     - stage: analysis
       script: npx jest --coverage
         && npx eslint -f json -o reports/eslint.json .
@@ -32,10 +37,8 @@ jobs:
           organization: flowscripter
           token:
             secure: $SONAR_TOKEN
+
     - stage: release
-      on:
-        branch: master
-      script: echo 'Releasing...'
       deploy:
         provider: script
         skip_cleanup: true
