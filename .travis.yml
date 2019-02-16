@@ -5,10 +5,13 @@ branches:
   - master
 notifications:
   slack:
-    secure: htEU3VYK0wUjaUetVG28Wt722xTQUcPy7VQJ8eXA1Mg4TFfiNkkbTN3KD8B4+jnwalIxI24h/iRAb6OoQlS7Za5ZaCi5/+rbT2wbo5u/XxWukr55IvnZ8Bttb6rGUZUHsoK7EsaU4Jr5xWrd1Q9Hw/L3hp3hjBvT1bsNclq410hoVLrcieR7WL152wQTApOREioJYaEfCVEJYL3y+9Rupj5DPgoI8xiRbmaA3m4X02tuadHwZ0dk4zlllJ0sc0SokMObNBBj/s2Z+6m+sxzprhh4PK7ohon6QC0SgchJiBUR7h3B/5Zzg35RtzOAVq5AyFbMKEsh1hNdhebG8s/Fs7wNSmHSMem/v8ZFGinUfzBy1Wp3+EwNoP7incKhu7r3hqh/yuXxKu26sZYpHBKy6ovLyi6t09xUE2/jwXN/Yq3t+HntJaeV71QMcMqpBKpcTDQ02LEREYAZTBbrsIZ7P7HiYcDS3pVL08JQ0+Df+P3g8ysArHdbsShshGyNpLSZtHceBZj6zKMe8UWRaiBGciif+VpgQRPlRwx2Gw21lrDLYRwbl4uQqWWv0R3ygk3iMrJ9t/NjII1zWZ5KKj3jyd1okDENgsu2/V7PfcmSbYNSqMQJcAGUeoUdebtyXBr82Xw7KVhrfdGjoCFHG6IvbqRPgurqyjnIXo/jPHa44Gc=
-    on_success: change
+    rooms:
+    - secure: "GP7C/RKIY/LqXD/i79hvg2SMIoOp0F+c/7n1XXod82paXD4uyeVmWyrWBuBz59hRqVQLu8kr/YN/oO/yYtorWwX2wz0ABY/bdHlsTovUFxP5VE//yswRN71m2NNVnt2nO2xU8sffHLS67NphboO0GWDdx3I+sQni01xng+23EAOuT1gwlH3xbizxV3XwUQSCM9esPyp0gaEZZDOqRLUAt31sMdm6h6fO9j2RdlX+y5LVCa3mRr9lDLXrPLi0zu84Nphp9et1BncqZUwjDBxjAJeQ6dEb3HoQuhiqd0SbvwTATvxDElRu67j7d8C4dZl7xAXo0VWq61nYEGQ4KpPBUPmEcIiTmb9JpZY6jugEGfF742nBIBALAYOCaSUV8tQmw93R7kt9Y9qDsUWvCupCgpH0gGdcnML+rxynzH6khE/08WKzSVJqWN4Qq4NwO95C4drdUumVyZzvnWzSOa94AccVNcSQqkV4igjgyGxwhr8P1hDExhzfPLHLVlvBADIJYl5kE12U3/iXlv7PMeCETbG3yAYuJfvFbobU97w1/puDoEDSaSySOFQtbbLzGSTM4cHTUSK/+X4ft3KZc/bE0/v/WpsIBAqJnBAA4husQMs+EHdKIO4CE392EGnMNSoy4oCdLmcR2Elg5Kv4F4Pes98VGCJai0TzfFO6PtPbAS4="
     on_failure: always
+    on_success: change
 stages:
+- name: test
+- name: analysis
 - name: release
   if: branch = master AND type != pull_request
 jobs:
@@ -19,7 +22,8 @@ jobs:
   - script: npm run lint
     name: lint
   - stage: analysis
-    script: npx jest --coverage && npx eslint -f json -o reports/eslint.json . && npx gulp sonar
+    script: npx jest --coverage && npx eslint -f json -o reports/eslint.json . &&
+      npx gulp sonar
     name: sonar
     addons:
       sonarcloud:
