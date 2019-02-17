@@ -4,6 +4,12 @@ module.exports = {
         es6: true,
         node: true
     },
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        project: './tsconfig.json',
+        sourceType: 'module',
+        ecmaVersion: 6
+    },
     plugins: [
         '@typescript-eslint'
     ],
@@ -11,12 +17,6 @@ module.exports = {
         'airbnb-base',
         'plugin:@typescript-eslint/recommended'
     ],
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        project: './tsconfig.json',
-        sourceType: 'module',
-        ecmaVersion: 6
-    },
     rules: {
         'padded-blocks': 'off',
         'comma-dangle': 'off',
