@@ -28,8 +28,8 @@
     },
     "main": "src/index.js",
     "scripts": {
-        "test": "./node_modules/.bin/jest",
-        "lint": "./node_modules/.bin/eslint ./src/** ./test/**"
+        "test": "npx jest",
+        "lint": "npx eslint ./src/** ./test/**"
     },
     "devDependencies": {
         "@commitlint/cli": "7.5.2",
