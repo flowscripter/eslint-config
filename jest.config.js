@@ -10,7 +10,7 @@ module.exports = {
         'lcov'
     ],
     collectCoverageFrom: [
-        'src/*.{js,ts}'
+        'src/*.js'
     ],
     coverageDirectory: 'reports'
 };

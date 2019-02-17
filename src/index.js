@@ -4,11 +4,16 @@ module.exports = {
         es6: true,
         node: true
     },
-    extends: [
-        'airbnb-base'
+    plugins: [
+        '@typescript-eslint'
     ],
-    parser: 'babel-eslint',
+    extends: [
+        'airbnb-base',
+        'plugin:@typescript-eslint/recommended'
+    ],
+    parser: '@typescript-eslint/parser',
     parserOptions: {
+        project: './tsconfig.json',
         sourceType: 'module',
         ecmaVersion: 6
     },
@@ -34,7 +39,8 @@ module.exports = {
     overrides: [
         {
             files: [
-                '**/*.test.js'
+                '**/*.test.js',
+                '**/*.test.ts'
             ],
             env: {
                 jest: true
