@@ -5,13 +5,13 @@
 [![coverage](https://sonarcloud.io/api/project_badges/measure?project=flowscripter_eslint-config&metric=coverage)](https://sonarcloud.io/dashboard?id=flowscripter_eslint-config)
 [![npm](https://img.shields.io/npm/v/@flowscripter/eslint-config.svg)](https://www.npmjs.com/package/@flowscripter/eslint-config)
 
-> Common [ESLint config](https://eslint.org/docs/user-guide/configuring) for Flowscripter TypeScript projects.
+> Shared [ESLint config](https://eslint.org/docs/user-guide/configuring) for Flowscripter TypeScript projects.
 
 This extensible shared config is itself extended from:
 
 * [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)
-* [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest).
-* [@typescript-eslint/eslint-plugin](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin).
+* [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest)
+* [@typescript-eslint/eslint-plugin](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)
 
 ## Install
 
