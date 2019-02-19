@@ -17,6 +17,14 @@ module.exports = {
         'airbnb-base',
         'plugin:@typescript-eslint/recommended'
     ],
+    settings: {
+        'import/resolver': {
+            node: {
+                paths: ['src'],
+                extensions: ['.js', '.ts']
+            }
+        }
+    },
     rules: {
         'padded-blocks': 'off',
         'comma-dangle': 'off',

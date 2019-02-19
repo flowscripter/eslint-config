@@ -1,7 +1,7 @@
 {
     "name": "@flowscripter/eslint-config",
     "version": "0.0.0",
-    "description": "Common ESLint config for all Flowscripter JavaScript projects.",
+    "description": "Shared ESLint config for Flowscripter TypeScript projects.",
     "repository": {
         "type": "git",
         "url": "https://github.com/flowscripter/eslint-config"
