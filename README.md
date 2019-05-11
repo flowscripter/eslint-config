@@ -13,7 +13,7 @@ This extensible shared config is itself extended from:
 * [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest)
 * [@typescript-eslint/eslint-plugin](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)
 
-## Install
+## Installation
 
 ```
 npx install-peerdeps --dev @flowscripter/eslint-config
