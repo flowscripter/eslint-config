@@ -25,6 +25,14 @@ Add `extends: '@flowscripter/eslint-config'` to your `.eslintrc.js` file.
 
 ## Build
 
+Firstly: 
+
+```
+npm install
+```
+
+then:
+
 Test: `npm test`
 
 Dogfooding: `npm run lint`
