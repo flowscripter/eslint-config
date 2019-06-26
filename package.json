@@ -42,7 +42,7 @@
         "husky": "2.6.0",
         "jest": "24.8.0",
         "semantic-release": "15.13.17",
-        "sonarqube-scanner": "2.4.1",
+        "sonarqube-scanner": "2.5.0",
         "typescript": "3.5.2"
     },
     "peerDependencies": {
