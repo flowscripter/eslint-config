@@ -43,6 +43,12 @@ module.exports = {
                 comments: 120
             }
         ],
+        'no-restricted-syntax': [
+            'error',
+            'ForInStatement',
+            'LabeledStatement',
+            'WithStatement'
+        ],
         // note you must disable the base rule as it can report incorrect errors
         semi: 'off',
         '@typescript-eslint/semi': ['error']
