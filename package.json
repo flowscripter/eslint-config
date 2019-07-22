@@ -37,7 +37,7 @@
         "@commitlint/config-conventional": "8.1.0",
         "eslint": "6.1.0",
         "eslint-plugin-import": "2.18.2",
-        "eslint-plugin-jest": "22.13.4",
+        "eslint-plugin-jest": "22.13.5",
         "gulp": "4.0.2",
         "husky": "3.0.1",
         "jest": "24.8.0",
