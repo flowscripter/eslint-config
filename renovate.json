@@ -1,5 +1,3 @@
 {
-    "extends": [
-        "@flowscripter"
-    ]
+    "extends": [ "@flowscripter" ]
 }
