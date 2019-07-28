@@ -35,13 +35,14 @@
     "devDependencies": {
         "@commitlint/cli": "7.6.1",
         "@commitlint/config-conventional": "7.6.0",
+        "@flowscripter/renovate-config": "1.0.0",
         "eslint": "5.16.0",
         "eslint-plugin-import": "2.17.2",
         "eslint-plugin-jest": "22.5.1",
         "gulp": "4.0.2",
         "husky": "2.2.0",
         "jest": "24.8.0",
-        "semantic-release": "15.13.13",
+        "semantic-release": "^15.13.19",
         "sonarqube-scanner": "2.4.0",
         "typescript": "3.4.5"
     },
