@@ -1,8 +1,13 @@
 {
     "include": [
-        "**/*.ts"
+        "./src/**/*.js",
+        "./test/**/*.js"
     ],
     "exclude": [
         "node_modules"
-    ]
+    ],
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true
+    }
 }
