@@ -54,8 +54,8 @@
         "typescript": "^3.3.3"
     },
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "2.1.0",
-        "@typescript-eslint/parser": "2.1.0",
+        "@typescript-eslint/eslint-plugin": "2.2.0",
+        "@typescript-eslint/parser": "2.2.0",
         "eslint-config-airbnb-base": "14.0.0"
     }
 }
