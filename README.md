@@ -39,4 +39,4 @@ Dogfooding: `npm run lint`
 
 ## License
 
-MIT © Vectronic
+MIT © Flowscripter
