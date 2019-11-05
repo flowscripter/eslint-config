@@ -45,7 +45,7 @@
         "jest": "24.9.0",
         "semantic-release": "15.13.30",
         "sonarqube-scanner": "2.5.0",
-        "typescript": "3.6.4"
+        "typescript": "3.7.2"
     },
     "peerDependencies": {
         "eslint": "^5.3.0 || ^6.0.0",
