@@ -37,7 +37,7 @@
         "@commitlint/config-conventional": "8.2.0",
         "@flowscripter/renovate-config": "1.0.3",
         "@types/jest": "24.0.23",
-        "eslint": "6.7.0",
+        "eslint": "6.7.1",
         "eslint-plugin-import": "2.18.2",
         "eslint-plugin-jest": "22.21.0",
         "gulp": "4.0.2",
