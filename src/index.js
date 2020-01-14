@@ -51,7 +51,11 @@ module.exports = {
         ],
         // note you must disable the base rule as it can report incorrect errors
         semi: 'off',
-        '@typescript-eslint/semi': ['error']
+        '@typescript-eslint/semi': ['error'],
+        'import/extensions': ['error', 'ignorePackages', {
+            js: 'never',
+            ts: 'never'
+        }]
     },
     overrides: [
         {
