@@ -33,7 +33,7 @@
         "lint": "npx eslint ./src/**/*.js ./test/**/*.js"
     },
     "devDependencies": {
-        "@commitlint/cli": "8.3.4",
+        "@commitlint/cli": "8.3.5",
         "@commitlint/config-conventional": "8.3.4",
         "@flowscripter/renovate-config": "1.0.3",
         "@types/jest": "24.9.0",
@@ -41,7 +41,7 @@
         "eslint-plugin-import": "2.20.0",
         "eslint-plugin-jest": "23.6.0",
         "gulp": "4.0.2",
-        "husky": "4.0.9",
+        "husky": "4.0.10",
         "jest": "24.9.0",
         "semantic-release": "16.0.1",
         "sonarqube-scanner": "2.5.0",
