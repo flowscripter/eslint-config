@@ -43,7 +43,7 @@
         "gulp": "4.0.2",
         "husky": "4.2.1",
         "jest": "25.1.0",
-        "semantic-release": "16.0.3",
+        "semantic-release": "16.0.4",
         "sonarqube-scanner": "2.5.0",
         "typescript": "3.7.5"
     },
