@@ -27,8 +27,7 @@ jobs:
     addons:
       sonarcloud:
         organization: flowscripter
-        token:
-          secure: "$SONAR_TOKEN"
+        token: "$SONAR_TOKEN"
   - stage: release
     script: skip
     deploy:
