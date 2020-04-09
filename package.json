@@ -41,7 +41,7 @@
         "eslint-plugin-import": "2.20.2",
         "eslint-plugin-jest": "23.8.2",
         "gulp": "4.0.2",
-        "husky": "4.2.4",
+        "husky": "4.2.5",
         "jest": "25.3.0",
         "semantic-release": "17.0.4",
         "sonarqube-scanner": "2.6.0",
