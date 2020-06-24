@@ -36,7 +36,7 @@
         "@commitlint/cli": "8.3.5",
         "@commitlint/config-conventional": "8.3.4",
         "@flowscripter/renovate-config": "1.0.3",
-        "@types/jest": "26.0.0",
+        "@types/jest": "26.0.2",
         "eslint": "7.3.1",
         "eslint-plugin-import": "2.21.2",
         "eslint-plugin-jest": "23.17.1",
