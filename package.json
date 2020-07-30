@@ -39,10 +39,10 @@
         "@types/jest": "26.0.7",
         "eslint": "7.5.0",
         "eslint-plugin-import": "2.22.0",
-        "eslint-plugin-jest": "23.19.0",
+        "eslint-plugin-jest": "23.20.0",
         "gulp": "4.0.2",
         "husky": "4.2.5",
-        "jest": "26.1.0",
+        "jest": "26.2.1",
         "semantic-release": "17.1.1",
         "sonarqube-scanner": "2.7.0",
         "typescript": "3.9.7"
